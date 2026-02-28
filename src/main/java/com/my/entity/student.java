@@ -1,6 +1,11 @@
 package com.my.entity;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
+//@Entity(name="Stu")
 public class student {
+	//@Id
      private int id,age;
      private String name, gender;
   

@@ -5,9 +5,9 @@
     
     <hibernate-mapping>
     
-     <class name="com.my.entity.student">
+     <class name="com.my.entity.student" table="Students">
      
-      <id name="id"><generator class="identity" /></id>
+      <id name="id" column="stuId"><generator class="identity" /></id>
       <property name="name" />
       <property name="gender" />
       <property name="age" />
