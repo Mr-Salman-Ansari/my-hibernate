@@ -1,5 +1,6 @@
 package com.my.entity;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -10,7 +11,9 @@ public class student {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
      private int id;
+	
      private String name, gender;
+     @Column(name="stuName")
      private int age;
      
      
