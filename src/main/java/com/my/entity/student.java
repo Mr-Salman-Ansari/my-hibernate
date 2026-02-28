@@ -1,9 +1,17 @@
 package com.my.entity;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+@Entity(name="Stu")
 public class student {
-     private int id,age;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+     private int id;
      private String name, gender;
-  
+     private int age;
      
      
 	 public student(String name, String gender, int age) {

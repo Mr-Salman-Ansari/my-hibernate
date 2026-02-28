@@ -12,7 +12,7 @@
 	     <property name="hibernate.connection.password">7599</property>
 	     <property name="hbm2ddl.auto">update</property>
 	     <property name="show_sql">True</property>
-	     <mapping resource="student.hbm.xml"/>
+	     <mapping class="com.my.entity.student"/>
 	   </session-factory>
 	
 	</hibernate-configuration>
