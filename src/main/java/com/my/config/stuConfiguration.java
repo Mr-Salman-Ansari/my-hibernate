@@ -23,11 +23,19 @@ public class stuConfiguration {
 		properties.put(Environment.SHOW_SQL, "true");
 		//properties.put(Environment.FORMAT_SQL, "true");
 		
-		 StandardServiceRegistry ssr = new StandardServiceRegistryBuilder().applySettings( properties).build();
-		 Metadata metaData = new MetadataSources(ssr).addAnnotatedClass(com.my.entity.student.class).getMetadataBuilder().build();
-		 SessionFactory sessionFcatory = metaData.buildSessionFactory();
+//		 StandardServiceRegistry ssr = new StandardServiceRegistryBuilder().applySettings( properties).build();
+//		 Metadata metaData = new MetadataSources(ssr).addAnnotatedClass(com.my.entity.student.class).getMetadataBuilder().build();
+//		 SessionFactory sessionFcatory = metaData.buildSessionFactory();
 		
-		return sessionFcatory;
+//		 SessionFactory sessionFcatory =  new MetadataSources(new StandardServiceRegistryBuilder().applySettings( properties).build())
+//				 .addAnnotatedClass(com.my.entity.student.class).getMetadataBuilder()
+//				 .build().buildSessionFactory();
+		
+		 
+		
+		return new MetadataSources(new StandardServiceRegistryBuilder().applySettings( properties).build())
+				.addAnnotatedClass(com.my.entity.student.class).getMetadataBuilder()
+				.build().buildSessionFactory();
 	}
 
 }

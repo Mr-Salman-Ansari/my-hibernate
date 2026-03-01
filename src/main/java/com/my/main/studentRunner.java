@@ -14,7 +14,7 @@ import com.my.entity.student;
 
 public class studentRunner {
    public static void main(String [] args) {
-	   student st = new student("Annu","Male",22);
+	   student st = new student("Annu","Male",22,"India");
 	   
 	  // Configuration cfg = new Configuration().configure(); // it is work like a midiator 
 	  // SessionFactory sf = cfg.buildSessionFactory();

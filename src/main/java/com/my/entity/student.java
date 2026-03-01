@@ -5,6 +5,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Transient;
 
 @Entity(name="Stu")
 public class student {
@@ -12,16 +13,22 @@ public class student {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
      private int id;
 	
-     private String name, gender;
+     private String name;
+     private String gender;
+     
      @Column(name="stuName")
      private int age;
      
+     @Transient
+     private String country;
      
-	 public student(String name, String gender, int age) {
+     
+	 public student(String name, String gender, int age, String country) {
 		super();
 		this.name = name;
 		this.gender = gender;
 		this.age = age;
+		this.country=country;
 	 }
 
 
