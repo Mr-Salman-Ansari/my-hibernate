@@ -12,6 +12,13 @@ import com.my.config.stuConfiguration;
 import com.my.entity.student;
 
 public class studentRunner {
+	
+	public static void DelById(int id, Session ss) {
+		  MutationQuery muteQuery = ss.createMutationQuery("delete from Stu where id=:id");
+		  muteQuery.setParameter("id", id);
+		   System.out.println("Status : "+muteQuery.executeUpdate());
+	}
+	
    public static void main(String [] args) {
 	   student st1 = new student("Archna","Female",22,"India");
 	 
@@ -64,9 +71,13 @@ public class studentRunner {
 //	   tx.commit();
 	   
 	   //Hql Delete Query
-	   MutationQuery muteQuery = ss.createMutationQuery("delete from Stu where id=11");
-	   System.out.println("Status : "+muteQuery.executeUpdate());
+//	   MutationQuery muteQuery = ss.createMutationQuery("delete from Stu where id=11");
+//	   System.out.println("Status : "+muteQuery.executeUpdate());
+	   
+	  DelById(5,ss);
 	   tx.commit();
+	   
+	   ss.close();
 	   
 	   }
 }
