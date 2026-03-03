@@ -19,7 +19,7 @@ public class stuConfiguration {
 		properties.put(Environment.JAKARTA_JDBC_URL, "jdbc:mysql://localhost:3306/college");
 		properties.put(Environment.JAKARTA_JDBC_USER, "root");
 		properties.put(Environment.JAKARTA_JDBC_PASSWORD, "7599");
-		properties.put(Environment.HBM2DDL_AUTO, "update");
+		properties.put(Environment.HBM2DDL_AUTO, "create");
 		properties.put(Environment.SHOW_SQL, "true");
 		//properties.put(Environment.FORMAT_SQL, "true");
 		
@@ -34,7 +34,7 @@ public class stuConfiguration {
 		 
 		
 		return new MetadataSources(new StandardServiceRegistryBuilder().applySettings( properties).build())
-				.addAnnotatedClass(com.my.entity.student.class).getMetadataBuilder()
+				.addAnnotatedClasses(com.my.entity.student.class,com.my.entity.Adress.class).getMetadataBuilder()
 				.build().buildSessionFactory();
 	}
 
