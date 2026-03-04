@@ -21,7 +21,7 @@ public class stuConfiguration {
 		properties.put(Environment.JAKARTA_JDBC_PASSWORD, "7599");
 		properties.put(Environment.HBM2DDL_AUTO, "create");
 		properties.put(Environment.SHOW_SQL, "true");
-		//properties.put(Environment.FORMAT_SQL, "true");
+		properties.put(Environment.FORMAT_SQL, "true");
 		
 //		 StandardServiceRegistry ssr = new StandardServiceRegistryBuilder().applySettings( properties).build();
 //		 Metadata metaData = new MetadataSources(ssr).addAnnotatedClass(com.my.entity.student.class).getMetadataBuilder().build();

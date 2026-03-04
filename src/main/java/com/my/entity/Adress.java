@@ -20,9 +20,8 @@ public class Adress {
 	}
 
 
-	public Adress(int hNo, String state, String city) {
+	public Adress(String state, String city) {
 		super();
-		this.hNo = hNo;
 		this.state = state;
 		this.city = city;
 	}
