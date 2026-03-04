@@ -5,6 +5,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Transient;
 
@@ -13,12 +14,14 @@ public class student {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
      private int id;
+	 @Column(name="stuName")
      private String name;
      private String gender;
-     @Column(name="stuName")
+     @Column(name="Stu_Age")
      private int age;
 
-     @OneToOne
+     @OneToOne(mappedBy="Student")
+    // @JoinColumn(name="add_Id") it is used for changing colum name who imported by other class as foren key
      private Adress adress;
      
      
@@ -88,8 +91,7 @@ public class student {
 
 	 @Override
 	 public String toString() {
-		return "student [id=" + id + ", name=" + name + ", gender=" + gender + ", age=" + age + ", adress=" + adress
-				+ "]";
+		return "student [id=" + id + ", name=" + name + ", gender=" + gender + ", age=" + age + "]";
 	 }	 
      
 }

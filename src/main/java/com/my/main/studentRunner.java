@@ -21,10 +21,17 @@ public class studentRunner {
 	}
 	
    public static void main(String [] args) {
-	   student st1 = new student("Archna","Female",22);
-	   Adress ads = new Adress("Kushinagar","UP");
-	 
+	   student st1 = new student();
+	   st1.setName("Salman");
+	   st1.setGender("Male");
+	   st1.setAge(21);
 	   
+	   Adress ads = new Adress();
+	   ads.setCity("Baluwa");
+	   ads.setState("UP");
+	  ads.setStudent(st1);
+	  
+	  
 	   st1.setAdress(ads);
 	    
 	   Session ss = stuConfiguration.getSessionFactory().openSession();
@@ -34,6 +41,17 @@ public class studentRunner {
 	   ss.persist(ads);
 	   ss.persist(st1);
 	   tx.commit();
+	   
+	   // for get student data by id
+	   student std = ss.find(student.class, 1);
+	   Adress adress = ss.find(Adress.class, 2);
+	   
+	   System.out.println(std);
+	   System.out.println(std.getAdress());
+	   
+	   
+	   System.out.println(adress);
+	   System.out.println(adress.getStudent());
 	   
 	   
 	   ss.close();
