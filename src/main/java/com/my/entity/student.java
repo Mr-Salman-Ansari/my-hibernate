@@ -1,53 +1,51 @@
 package com.my.entity;
 
-import jakarta.persistence.Column;
+import java.util.List;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.OneToOne;
-import jakarta.persistence.Transient;
 
-@Entity(name="Stu")
+import jakarta.persistence.OneToMany;
+
+
+@Entity
 public class student {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
      private int id;
-	 @Column(name="stuName")
      private String name;
      private String gender;
-     @Column(name="Stu_Age")
      private int age;
-
-     @OneToOne(mappedBy="Student")
-    // @JoinColumn(name="add_Id") it is used for changing colum name who imported by other class as foren key
-     private Adress adress;
+     @OneToMany
+     private List<Adresses> adresses;
      
      
-	 public Adress getAdress() {
-		return adress;
-	}
-
-
-	 public void setAdress(Adress adress) {
-		 this.adress = adress;
-	 }
-
-
-	 public student(String name, String gender, int age) {
-		super();
-		this.name = name;
-		this.gender = gender;
-		this.age = age;
-	 }
-
-
 	 public student() {
 		super();
 		// TODO Auto-generated constructor stub
 	 }
 
+
+	 public student(int id, String name, String gender, int age, List<Adresses> adresses) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.gender = gender;
+		this.age = age;
+		this.adresses = adresses;
+	 }
+
+	 
+	 public List<Adresses> getAdresses() {
+		 return adresses;
+	 }
+
+
+	 public void setAdresses(List<Adresses> adresses) {
+		 this.adresses = adresses;
+	 }
 
 	 public int getId() {
 		 return id;
@@ -89,9 +87,15 @@ public class student {
 	 }
 
 
+
+
 	 @Override
 	 public String toString() {
-		return "student [id=" + id + ", name=" + name + ", gender=" + gender + ", age=" + age + "]";
-	 }	 
+		return "student [id=" + id + ", name=" + name + ", gender=" + gender + ", age=" + age + ", adresses=" + adresses
+				+ "]";
+	 }
+
      
+	 
+   
 }

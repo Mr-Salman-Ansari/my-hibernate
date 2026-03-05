@@ -1,11 +1,8 @@
 package com.my.config;
 
 import java.util.Properties;
-
 import org.hibernate.SessionFactory;
-import org.hibernate.boot.Metadata;
 import org.hibernate.boot.MetadataSources;
-import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Environment;
 
@@ -34,7 +31,7 @@ public class stuConfiguration {
 		 
 		
 		return new MetadataSources(new StandardServiceRegistryBuilder().applySettings( properties).build())
-				.addAnnotatedClasses(com.my.entity.student.class,com.my.entity.Adress.class).getMetadataBuilder()
+				.addAnnotatedClasses(com.my.entity.student.class,com.my.entity.Adresses.class).getMetadataBuilder()
 				.build().buildSessionFactory();
 	}
 

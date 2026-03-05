@@ -1,15 +1,15 @@
 package com.my.main;
 
-import java.util.List;
+import java.util.ArrayList;
 
 import org.hibernate.Session;
 
 import org.hibernate.Transaction;
 import org.hibernate.query.MutationQuery;
-import org.hibernate.query.Query;
+
 
 import com.my.config.stuConfiguration;
-import com.my.entity.Adress;
+import com.my.entity.Adresses;
 import com.my.entity.student;
 
 public class studentRunner {
@@ -26,32 +26,40 @@ public class studentRunner {
 	   st1.setGender("Male");
 	   st1.setAge(21);
 	   
-	   Adress ads = new Adress();
-	   ads.setCity("Baluwa");
-	   ads.setState("UP");
-	  ads.setStudent(st1);
+	   Adresses ads1 = new Adresses();
+	   ads1.setCity("Baluwa");
+	   ads1.setState("UP");
+	   
+	   Adresses ads2 = new Adresses();
+	   ads2.setCity("Baluwa");
+	   ads2.setState("UP");
+	   
+	   Adresses ads3 = new Adresses();
+	   ads3.setCity("Baluwa");
+	   ads3.setState("UP");
+	  
+	  ArrayList<Adresses> listofAdd = new ArrayList<>();
+	  listofAdd.add(ads1);
+	  listofAdd.add(ads2);
+	  listofAdd.add(ads3);
+	  
+	  st1.setAdresses(listofAdd);
 	  
 	  
-	   st1.setAdress(ads);
 	    
 	   Session ss = stuConfiguration.getSessionFactory().openSession();
 	   Transaction tx = ss.beginTransaction();
 	   
 	   
-	   ss.persist(ads);
-	   ss.persist(st1);
-	   tx.commit();
+//	   ss.persist(ads1);
+//	   ss.persist(ads2);
+//	   ss.persist(ads3);
+//	   ss.persist(st1);
+//	   tx.commit();
 	   
-	   // for get student data by id
-	   student std = ss.find(student.class, 1);
-	   Adress adress = ss.find(Adress.class, 2);
-	   
-	   System.out.println(std);
-	   System.out.println(std.getAdress());
-	   
-	   
-	   System.out.println(adress);
-	   System.out.println(adress.getStudent());
+	   student std1 =ss.find(student.class, 1);
+	   System.out.println(std1);
+	   System.out.println(std1.getAdresses());
 	   
 	   
 	   ss.close();
