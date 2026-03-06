@@ -7,7 +7,8 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.ManyToOne;
+
 
 
 @Entity
@@ -18,7 +19,7 @@ public class student {
      private String name;
      private String gender;
      private int age;
-     @OneToMany
+     @ManyToOne
      private List<Adresses> adresses;
      
      

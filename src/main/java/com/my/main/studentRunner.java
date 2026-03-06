@@ -1,6 +1,5 @@
 package com.my.main;
 
-import java.util.ArrayList;
 
 import org.hibernate.Session;
 
@@ -10,7 +9,6 @@ import org.hibernate.query.MutationQuery;
 
 import com.my.config.stuConfiguration;
 import com.my.entity.Adresses;
-import com.my.entity.student;
 
 public class studentRunner {
 	
@@ -64,7 +62,7 @@ public class studentRunner {
 //	   System.out.println(std1);
 //	   System.out.println(std1.getAdresses());
 	   
-	   Adresses std1 =ss.find(Adresses.class, 2);
+	   Adresses std1 =ss.find(Adresses.class, 1);
 	   System.out.println(std1);
 	   System.out.println(std1.getStudent());
 	   
