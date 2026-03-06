@@ -4,6 +4,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 
 @Entity
 public class Adresses {
@@ -13,15 +14,14 @@ public class Adresses {
 	private int hNo;
 	private String state, city;
 	
+	@ManyToOne
+	private student Student;
+	
 	
 	public Adresses() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-
-
-   
-
 
 	public Adresses(int hNo, String state, String city) {
 		super();
@@ -31,8 +31,13 @@ public class Adresses {
 	}
 
 
+	public student getStudent() {
+		return Student;
+	}
 
-
+	public void setStudent(student student) {
+		Student = student;
+	}
 
 	public int gethNo() {
 		return hNo;

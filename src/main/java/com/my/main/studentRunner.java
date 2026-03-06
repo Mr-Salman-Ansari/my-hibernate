@@ -21,29 +21,32 @@ public class studentRunner {
 	}
 	
    public static void main(String [] args) {
-	   student st1 = new student();
-	   st1.setName("Salman");
-	   st1.setGender("Male");
-	   st1.setAge(21);
-	   
-	   Adresses ads1 = new Adresses();
-	   ads1.setCity("Baluwa");
-	   ads1.setState("UP");
-	   
-	   Adresses ads2 = new Adresses();
-	   ads2.setCity("Baluwa");
-	   ads2.setState("UP");
-	   
-	   Adresses ads3 = new Adresses();
-	   ads3.setCity("Baluwa");
-	   ads3.setState("UP");
-	  
-	  ArrayList<Adresses> listofAdd = new ArrayList<>();
-	  listofAdd.add(ads1);
-	  listofAdd.add(ads2);
-	  listofAdd.add(ads3);
-	  
-	  st1.setAdresses(listofAdd);
+//	   student st1 = new student();
+//	   st1.setName("Salman");
+//	   st1.setGender("Male");
+//	   st1.setAge(21);
+//	   
+//	   Adresses ads1 = new Adresses();
+//	   ads1.setCity("Baluwa");
+//	   ads1.setState("UP");
+//	   ads1.setStudent(st1);
+//	   
+//	   Adresses ads2 = new Adresses();
+//	   ads2.setCity("Baluwa");
+//	   ads2.setState("UP");
+//	   ads2.setStudent(st1);
+//	   
+//	   Adresses ads3 = new Adresses();
+//	   ads3.setCity("Baluwa");
+//	   ads3.setState("UP");
+//	   ads3.setStudent(st1);
+//	  
+//	  ArrayList<Adresses> listofAdd = new ArrayList<>();
+//	  listofAdd.add(ads1);
+//	  listofAdd.add(ads2);
+//	  listofAdd.add(ads3);
+//	  
+//	  st1.setAdresses(listofAdd);
 	  
 	  
 	    
@@ -57,9 +60,13 @@ public class studentRunner {
 //	   ss.persist(st1);
 //	   tx.commit();
 	   
-	   student std1 =ss.find(student.class, 1);
+//	   student std1 =ss.find(student.class, 1);
+//	   System.out.println(std1);
+//	   System.out.println(std1.getAdresses());
+	   
+	   Adresses std1 =ss.find(Adresses.class, 1);
 	   System.out.println(std1);
-	   System.out.println(std1.getAdresses());
+	   System.out.println(std1.getStudent());
 	   
 	   
 	   ss.close();
