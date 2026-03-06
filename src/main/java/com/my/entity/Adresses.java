@@ -1,5 +1,6 @@
 package com.my.entity;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -14,7 +15,7 @@ public class Adresses {
 	private int hNo;
 	private String state, city;
 	
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.ALL)
 	private student Student;
 	
 	

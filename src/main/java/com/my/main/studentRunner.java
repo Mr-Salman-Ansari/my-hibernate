@@ -32,12 +32,12 @@ public class studentRunner {
 //	   ads1.setStudent(st1);
 //	   
 //	   Adresses ads2 = new Adresses();
-//	   ads2.setCity("Baluwa");
+//	   ads2.setCity("kushinagar");
 //	   ads2.setState("UP");
 //	   ads2.setStudent(st1);
 //	   
 //	   Adresses ads3 = new Adresses();
-//	   ads3.setCity("Baluwa");
+//	   ads3.setCity("Gorakhpur");
 //	   ads3.setState("UP");
 //	   ads3.setStudent(st1);
 //	  
@@ -64,7 +64,7 @@ public class studentRunner {
 //	   System.out.println(std1);
 //	   System.out.println(std1.getAdresses());
 	   
-	   Adresses std1 =ss.find(Adresses.class, 1);
+	   Adresses std1 =ss.find(Adresses.class, 2);
 	   System.out.println(std1);
 	   System.out.println(std1.getStudent());
 	   
