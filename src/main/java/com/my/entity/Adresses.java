@@ -1,11 +1,13 @@
 package com.my.entity;
 
-import jakarta.persistence.CascadeType;
+import java.util.List;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.ManyToMany;
+
 
 @Entity
 public class Adresses {
@@ -13,10 +15,11 @@ public class Adresses {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int hNo;
-	private String state, city;
+	private String state;
+	private String city;
 	
-	@ManyToOne(cascade = CascadeType.ALL)
-	private student Student;
+	@ManyToMany(mappedBy="adresses")
+	private List<student> student;
 	
 	
 	public Adresses() {
@@ -24,20 +27,19 @@ public class Adresses {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Adresses(int hNo, String state, String city) {
+	public Adresses(String state, String city) {
 		super();
-		this.hNo = hNo;
 		this.state = state;
 		this.city = city;
 	}
 
-
-	public student getStudent() {
-		return Student;
+	
+	public List<student> getStudent() {
+		return student;
 	}
 
-	public void setStudent(student student) {
-		Student = student;
+	public void setStudent(List<student> student) {
+		this.student = student;
 	}
 
 	public int gethNo() {

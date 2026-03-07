@@ -2,12 +2,12 @@ package com.my.entity;
 
 import java.util.List;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.ManyToMany;
 
 
 
@@ -19,7 +19,8 @@ public class student {
      private String name;
      private String gender;
      private int age;
-     @ManyToOne
+     
+     @ManyToMany(cascade=CascadeType.ALL)
      private List<Adresses> adresses;
      
      
@@ -29,14 +30,14 @@ public class student {
 	 }
 
 
-	 public student(int id, String name, String gender, int age, List<Adresses> adresses) {
+	 public student(int id, String name, String gender, int age) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.gender = gender;
 		this.age = age;
-		this.adresses = adresses;
 	 }
+	 
 
 	 
 	 public List<Adresses> getAdresses() {
